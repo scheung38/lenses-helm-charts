@@ -1,0 +1,20 @@
+# icon: https://apps.okteto.com/movies/icon.png
+# deploy:
+#   - okteto build -t okteto.dev/api:${OKTETO_GIT_COMMIT} api
+#   - okteto build -t okteto.dev/frontend:${OKTETO_GIT_COMMIT} frontend
+#   - helm upgrade --install movies chart --set tag=${OKTETO_GIT_COMMIT}
+# devs:
+#   - api/okteto.yml
+#   - frontend/okteto.yml
+  
+  
+  
+  
+icon: https://apps.okteto.com/movies/icon.png
+deploy:
+  - helm upgrade --install -f https://github.com/scheung38/lenses-helm-charts/blob/release/4.1/charts/lenses/values.yaml dev --set tag=${OKTETO_GIT_COMMIT}
+# devs:
+#   - api/okteto.yml
+#   - frontend/okteto.yml
+  
+ 
