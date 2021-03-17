@@ -16,7 +16,12 @@ deploy:
   - helm repo update
 #   - helm --debug upgrade --install -f https://github.com/scheung38/lenses-helm-charts/blob/release/4.1/charts/lenses/values.yaml dev lensesio/lensesio --set tag=${OKTETO_GIT_COMMIT}
 #   - helm --debug upgrade --install -f https://github.com/scheung38/lenses-helm-charts/tree/release/4.1/charts/lenses dev --set tag=${OKTETO_GIT_COMMIT}
-  - helm --debug upgrade --install seb-lenses --namespace lenses-scheung38 lensesio/lenses  --set tag=${OKTETO_GIT_COMMIT}
+#  - helm --debug upgrade --install lensesio/lense seb-lenses --namespace=lenses-scheung38 seb-lenses --set tag=${OKTETO_GIT_COMMIT}
+
+  - helm upgrade --install -f https://github.com/scheung38/lenses-helm-charts/blob/release/4.1/charts/lenses/values.yaml lensesio/lenses lenses --namespace=lenses-scheung38 --set tag=${OKTETO_GIT_COMMIT}
+
+#  - helm upgrade --install -f astro.yaml  --namespace=analytics-seb analytics-seb astronomer/astronomer  --debug   --v=7 --history-max=256 --atomic
+
 # devs:
 #   - api/okteto.yml
 #   - frontend/okteto.yml
