@@ -18,7 +18,7 @@ deploy:
 #   - helm --debug upgrade --install -f https://github.com/scheung38/lenses-helm-charts/tree/release/4.1/charts/lenses dev --set tag=${OKTETO_GIT_COMMIT}
 #  - helm --debug upgrade --install lensesio/lense seb-lenses --namespace=lenses-scheung38 seb-lenses --set tag=${OKTETO_GIT_COMMIT}
 
-  - helm install lensesio/lenses --name lenses --namespace lenses
+  - helm install lensesio/lenses seb-lenses --namespace=lenses-scheung38
 
 #  - helm upgrade --install lensesio/lenses lenses --namespace=lenses-scheung38 --set tag=${OKTETO_GIT_COMMIT}
 
